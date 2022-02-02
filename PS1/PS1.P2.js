@@ -1,4 +1,4 @@
-//Helper parseExp - converts expression string into operands array
+//helper parseExp - converts expression string into operands array
 const parseExp = expression => [Number(expression[0]), Number(expression[2])]
 
 //getOperation - returns function based on input operator

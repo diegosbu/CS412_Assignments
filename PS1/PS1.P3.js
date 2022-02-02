@@ -49,4 +49,4 @@ const expr2 = fun1('supercalifragilisticexpialidocious',
     })
 
 console.log(expr1);
-console.log(expr2);
+console.table(expr2);

@@ -42,6 +42,24 @@ const evaluate = (expression) => {
     return getOperation(expression[1]);
 }
 
-const expression = '1/3';
+
+let expression = '4+2';
 let operator = evaluate(expression);
 console.log(`${expression} = ${operator(expression)}`);
+
+expression = '5*7';
+operator = evaluate(expression);
+console.log(`${expression} = ${operator(expression)}`);
+
+expression = '6-1';
+operator = evaluate(expression);
+console.log(`${expression} = ${operator(expression)}`);
+
+expression = '9/2';
+operator = evaluate(expression);
+console.log(`${expression} = ${operator(expression)}`);
+
+expression = '2^8';
+operator = evaluate(expression);
+console.log(`${expression} = ${operator(expression)}`);
+

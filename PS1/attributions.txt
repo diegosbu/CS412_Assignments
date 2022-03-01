@@ -1,5 +1,0 @@
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll (string replaceAll resource)
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object (create object resource)
-https://www.w3schools.com/js/js_type_conversion.asp (Number type conversion resource)
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join (array join resource)
-

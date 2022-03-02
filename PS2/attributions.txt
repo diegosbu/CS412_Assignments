@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/20089582/how-to-get-a-url-parameter-in-express (req.params resource)
+

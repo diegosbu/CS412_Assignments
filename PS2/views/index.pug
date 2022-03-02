@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  if title
+    h1= title
+    p Welcome to #{title}
+  else if string
+    h1 Problem 1 - Part B:
+    p= string
+
+
+

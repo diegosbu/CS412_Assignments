@@ -20,6 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+//PS3 mounted
 app.use('/ps3', ps3Router);
 
 // catch 404 and forward to error handler

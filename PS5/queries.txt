@@ -1,0 +1,4 @@
+Question 1: 
+db.restaurants.find( { borough: "Manhattan" })
+
+Question 2: 

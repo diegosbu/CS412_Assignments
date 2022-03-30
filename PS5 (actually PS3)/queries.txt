@@ -9,3 +9,6 @@ db.restaurants.find( { borough: "Manhattan", "grades.grade": "A"} )
 
 Question 4:
 db.restaurants.find( { borough: "Manhattan" } ).count()
+
+Question 5:
+db.restaurants.find( { $or: [ { borough: "Manhattan" }, { borough: "Queens" } ]  } ).count()

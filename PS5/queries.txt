@@ -2,3 +2,7 @@ Question 1:
 db.restaurants.find( { borough: "Manhattan" })
 
 Question 2: 
+db.restaurants.find( { borough: "Manhattan" }, { name: 1, cuisine: 1, _id: 0 } )
+
+Question 3
+db.restaurants.find( { borough: "Manhattan" }, { name: 1, cuisine: 1, _id: 0 } )

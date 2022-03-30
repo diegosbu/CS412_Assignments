@@ -12,3 +12,7 @@ db.restaurants.find( { borough: "Manhattan" } ).count()
 
 Question 5:
 db.restaurants.find( { $or: [ { borough: "Manhattan" }, { borough: "Queens" } ]  } ).count()
+
+Question 6:
+db.restaurants.update( { name: "Lexler Deli" }, { $set: { "address.building": 111, "address.street": "Short Street", borough: "Bronx" } } )
+

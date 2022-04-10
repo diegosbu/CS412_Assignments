@@ -64,19 +64,20 @@ router.post('/async', (req, res, next) => {
 });
 
 
-// router.post('/callback', (req, res, next) => {
-//   const doReq = async() => {
-//     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`, {method: 'GET'});
-//     const data = await response.json();
+router.post('/callback', (req, res, next) => {
+  const doReq = async() => {
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`, {method: 'GET'});
+    const data = await response.json();
 
-//     return data;
-//   }
+    return data;
+  }
 
-//   constsendReq = operator => {
-//     response = await doReq()
-//     res.send(data)
-//   }
+  const constsendReq = async (operator) => {
+    response = await doReq();
+    res.send(response);
+  }
 
-// });
+  constsendReq(doReq);
+});
 
 module.exports = router;

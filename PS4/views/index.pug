@@ -1,5 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to the #{title}. To interact with the api use the /ps4 routes.
+  if title == 'Problem Set 4 Website'
+    h1= title
+    p Welcome to the #{title}. To interact with the api use the /ps4 routes.
+  else
+    h1= title
+    p Welcome to the #{title}.
+
+    if data1 
+      p= data1
+    else if data2 
+      p= data2
+    else if data3 
+      p= data3
+    else 
+      p The basic post routes are: /ps4/promise, /ps4/async, /ps4/callback
+      p Use the form below to interact with the form posting route.
+
+      h2 TMDB API Form
+
+      form(id='apiCall' action='/ps4/formData', method='post')
+        input(type='text', name='input1', placeholder='Input a movie name')
+        br
+        input(type='submit' value='Submit')

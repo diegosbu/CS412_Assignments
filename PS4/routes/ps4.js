@@ -11,7 +11,7 @@ const API_KEY = process.env.APIKEY;
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  res.send('the different routes are: /ps4/promise, /ps4/async, and /ps4/callback');
+  res.render('index', { title: 'PS4 Routes Page' });
 });
 
 router.post('/promise', (req, res, next) => {
@@ -21,13 +21,13 @@ router.post('/promise', (req, res, next) => {
         method: 'GET',
         url: 'https://api.themoviedb.org/3/genre/movie/list',
         qs: {api_key: API_KEY}
-      }
+      } 
   
       request(options, (err, res, body) => {
         if (err) {
-          throw new Error(err)
+          throw new Error(err);
         } else {
-          resolve(body)
+          resolve(body);
         }
       })
     })
@@ -35,12 +35,12 @@ router.post('/promise', (req, res, next) => {
 
   doReq()
     .then(body => {
-      const response = JSON.parse(body)
-      console.log(response)
-      res.send(response)
+      const response = body
+      console.log(response);
+      res.render('index', { title: 'PS4 Part B page', data1: response });
     })
     .catch(err => {
-      console.log(err)
+      console.log(err);
     })
 });
 
@@ -55,11 +55,11 @@ router.post('/async', (req, res, next) => {
 
   doReq()
     .then(data => {
-      console.log(data)
-      res.send(data)
+      console.log(data);
+      res.render('index', { title: 'PS4 Part C page', data2: JSON.stringify(data) });
     })
     .catch(err => {
-      console.log(err)
+      console.log(err);
     })
 });
 
@@ -74,10 +74,33 @@ router.post('/callback', (req, res, next) => {
 
   const constsendReq = async (operator) => {
     response = await doReq();
-    res.send(response);
+    res.render('index', { title: 'PS4 Part D page', data3: JSON.stringify(response) });
   }
 
   constsendReq(doReq);
 });
+
+router.post('/formData', (req, res, next) => {
+  query = req.body.input1;
+  console.log(query)
+
+  const doReq = async() => {
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&page=1`, {method: 'GET'});
+    const data = await response.json();
+
+    return data;
+  }
+
+  doReq()
+    .then(data => {
+      console.log(data);
+      res.render('index', { title: 'PS4 Part F page', data2: JSON.stringify(data) });
+    })
+    .catch(err => {
+      console.log(err);
+    })
+});
+
+
 
 module.exports = router;

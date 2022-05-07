@@ -1,5 +1,7 @@
 .idea
 .PS1
+.env
 PS2/node_modules
 PS2/
-PS4
+PS3
+PS5/node_modules
